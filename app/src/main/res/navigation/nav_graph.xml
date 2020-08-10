@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.test.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_howToPlayScreen2"
+            app:destination="@id/howToPlayScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.test.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_scoreScreen"
+            app:destination="@id/scoreScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreScreen"
+        android:name="com.example.test.scoreScreen"
+        android:label="fragment_score_screen"
+        tools:layout="@layout/fragment_score_screen" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/howToPlayScreen2"
+        android:name="com.example.test.howToPlayScreen"
+        android:label="fragment_how_to_play_screen"
+        tools:layout="@layout/fragment_how_to_play_screen" />
+</navigation>
